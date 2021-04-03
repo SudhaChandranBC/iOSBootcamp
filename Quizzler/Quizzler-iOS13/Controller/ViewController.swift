@@ -15,16 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var option1Button: UIButton!
     
     var timer = Timer()
-    var quizModel = QuizBrain()
-    
-   
-    
+//    var quizModel = QuizBrain()
+    var quizModel = QuizBrain1()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateUI()
+        updateAnswers()
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
@@ -45,7 +45,15 @@ class ViewController: UIViewController {
         progressBar.progress = quizModel.getProgress()
         trueButton.backgroundColor = .clear
         falseButton.backgroundColor = .clear
+        option1Button.backgroundColor = .clear
+        updateAnswers()
     }
-
+    
+    func updateAnswers() {
+        let answers = quizModel.getAnswers()
+        option1Button.setTitle(answers[0], for: .normal)
+        trueButton.setTitle(answers[1], for: .normal)
+        falseButton.setTitle(answers[2], for: .normal)
+    }
 }
 
