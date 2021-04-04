@@ -7,5 +7,11 @@
 
 import Foundation
 
-print("Hello, World!")
+let skeleton = Enemy(health: 10, attachStrength: 100)
 
+//let dragon = Dragon()
+//dragon.wingSpan = 5
+//dragon.attachStrength = 15
+//dragon.talk(speech: "asdksajkdhsajkbd akjlsdhasjkd laskjdhsjhdbjsh asjkdhskjdhs ")
+//dragon.move()
+//dragon.at tack()
